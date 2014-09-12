@@ -7,12 +7,9 @@ RUN echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt
     apt-get update && \
     apt-get -y dist-upgrade
 
-RUN echo "deb http://ppa.launchpad.net/ondrej/php5-5.6/ubuntu precise main" >> /etc/apt/sources.list && \
+RUN echo "deb http://ppa.launchpad.net/ondrej/php5-oldstable/ubuntu precise main" >> /etc/apt/sources.list && \
     apt-key adv --keyserver keyserver.ubuntu.com --recv-key E5267A6C && \
     apt-get update
-#RUN apt-get install -y python-software-properties && \
-#    sudo add-apt-repository ppa:ondrej/php5-oldstable && \
-#    apt-get update
 
 RUN apt-get -y install php5 php5-fpm php5-gd php5-ldap \
     php5-sqlite php5-pgsql php-pear php5-mysql \
