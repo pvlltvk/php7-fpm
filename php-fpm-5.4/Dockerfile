@@ -35,4 +35,5 @@ RUN mkdir -p /var/www && \
 
 EXPOSE 9000
 VOLUME /var/www
+VOLUME /var/log/php5-fpm
 ENTRYPOINT ["php5-fpm"]

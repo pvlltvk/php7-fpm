@@ -18,10 +18,16 @@ RUN apt-get -y install php5 php5-fpm php5-gd php5-ldap \
 RUN sed -i '/daemonize /c \
 daemonize = no' /etc/php5/fpm/php-fpm.conf
 
+RUN sed -i '/error_log /c \
+error_log = /var/log/php5-fpm/php5-fpm.log' /etc/php5/fpm/php-fpm.conf
+
 RUN sed -i '/^listen /c \
 listen = 0.0.0.0:9000' /etc/php5/fpm/pool.d/www.conf
 
 RUN sed -i 's/^listen.allowed_clients/;listen.allowed_clients/' /etc/php5/fpm/pool.d/www.conf
+
+RUN mkdir -p /var/log/php5-fpm && \
+    chown -R www-data:www-data /var/log/php5-fpm
 
 RUN mkdir -p /var/www && \
     echo "<?php phpinfo(); ?>" > /var/www/index.php && \
@@ -29,4 +35,5 @@ RUN mkdir -p /var/www && \
 
 EXPOSE 9000
 VOLUME /var/www
+VOLUME /var/log/php5-fpm
 ENTRYPOINT ["php5-fpm"]
