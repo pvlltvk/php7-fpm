@@ -19,7 +19,7 @@ RUN sed -i '/daemonize /c \
 daemonize = no' /etc/php5/fpm/php-fpm.conf
 
 RUN sed -i '/error_log /c \
-error_log = /var/log/php5-fpm/php5-fpm.log' /etc/php5/fpm/php-fpm.conf
+error_log = /var/log/php5-fpm/php5.4-fpm.log' /etc/php5/fpm/php-fpm.conf
 
 RUN sed -i '/^listen /c \
 listen = 0.0.0.0:9000' /etc/php5/fpm/pool.d/www.conf

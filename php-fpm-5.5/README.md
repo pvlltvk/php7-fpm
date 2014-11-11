@@ -36,7 +36,7 @@ $ docker run -d pvlltvk/ubuntu-presice-php-fpm-5.5
 Run with name, mount host directory as a container data volume and map network ports inside our container to our host. You can put PHP application in this host directory.
 
 ```
-docker run -d -P --name example_name -v /example_host_directory:/example_container_volume pvlltvk/ubuntu-presice-php-fpm-5.5
+$ docker run -d -P --name example_name -v /example_host_directory:/example_container_volume pvlltvk/ubuntu-presice-php-fpm-5.5
 ```
 
 ## Exposed ports
