@@ -12,7 +12,7 @@ RUN echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt
     apt-get update && \
     apt-get -y dist-upgrade
 
-RUN apt-get -y install memcached
+RUN apt-get -y install perl memcached
 
 #RUN sed -i '/logfile /c \
 #logfile /var/log/memcached/memcached.log' /etc/memcached.conf
