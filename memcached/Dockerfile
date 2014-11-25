@@ -8,11 +8,11 @@ MAINTAINER Pavel Litvyak <pvlltvk@gmail.com>
 
 ENV DEBIAN_FRONTEND noninteractive
 
-RUN echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt/sources.list && \
-    apt-get update && \
-    apt-get -y dist-upgrade
+#RUN echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt/sources.list && \
+RUN  apt-get update
+#    apt-get -y dist-upgrade
 
-RUN apt-get -y install perl memcached
+RUN apt-get -y install memcached
 
 #RUN sed -i '/logfile /c \
 #logfile /var/log/memcached/memcached.log' /etc/memcached.conf
