@@ -1,7 +1,8 @@
-# pvlltvk/php7-fpm
-
 Repo for PHP7-FPM based on official PHP 7 Alpine repository.  
+[![](https://images.microbadger.com/badges/image/pvlltvk/php7-fpm.svg)](http://microbadger.com/images/pvlltvk/php7-fpm "Get your own image badge on microbadger.com")
+[![](https://images.microbadger.com/badges/version/pvlltvk/php7-fpm.svg)](http://microbadger.com/images/pvlltvk/php7-fpm "Get your own version badge on microbadger.com")
 
+## PHP extentions
 Additional PHP extentions in this image:
 
 - [GD](http://php.net/manual/en/intro.image.php)
@@ -14,7 +15,6 @@ Additional PHP extentions in this image:
 - [phpredis](https://github.com/phpredis/phpredis)
 
 ## Getting image
-
 This image can be pulled from [Docker Hub](https://hub.docker.com):
 ```
 docker pull pvlltvk/php7-fpm
