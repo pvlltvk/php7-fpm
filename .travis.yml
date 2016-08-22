@@ -23,4 +23,3 @@ install:
 
 script:
   - curl -I 127.0.0.1:8080/info.php 2>/dev/null | head -n 1|cut -d$' ' -f2 | grep 200
-
