@@ -3,7 +3,7 @@ services:
 before_install:
   - docker pull nginx
   - docker pull php:fpm-alpine
-  - | 
+  - |
     cat <<EOF > default.conf
     server {
         location ~ \.php$ {
