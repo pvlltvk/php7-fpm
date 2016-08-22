@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/pvlltvk/php7-fpm.svg?branch=master)](https://travis-ci.org/pvlltvk/php7-fpm)
 [![](https://images.microbadger.com/badges/image/pvlltvk/php7-fpm.svg)](http://microbadger.com/images/pvlltvk/php7-fpm "Get your own image badge on microbadger.com")[![](https://images.microbadger.com/badges/version/pvlltvk/php7-fpm.svg)](http://microbadger.com/images/pvlltvk/php7-fpm "Get your own version badge on microbadger.com")
 
 Dockerfile to build PHP7-FPM image. Based on official PHP 7 Alpine image.  
