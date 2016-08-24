@@ -1,7 +1,6 @@
-[![Build Status](https://travis-ci.org/pvlltvk/php7-fpm.svg?branch=master)](https://travis-ci.org/pvlltvk/php7-fpm)
-[![](https://images.microbadger.com/badges/image/pvlltvk/php7-fpm.svg)](http://microbadger.com/images/pvlltvk/php7-fpm "Get your own image badge on microbadger.com")[![](https://images.microbadger.com/badges/version/pvlltvk/php7-fpm.svg)](http://microbadger.com/images/pvlltvk/php7-fpm "Get your own version badge on microbadger.com")
+[![Build Status](https://travis-ci.org/pvlltvk/php7-fpm.svg?branch=master)](https://travis-ci.org/pvlltvk/php7-fpm)[![](https://images.microbadger.com/badges/image/pvlltvk/php7-fpm.svg)](http://microbadger.com/images/pvlltvk/php7-fpm "Get your own image badge on microbadger.com")[![](https://images.microbadger.com/badges/version/pvlltvk/php7-fpm.svg)](http://microbadger.com/images/pvlltvk/php7-fpm "Get your own version badge on microbadger.com")
 
-Dockerfile to build PHP7-FPM image. Based on official PHP 7 Alpine image.  
+Dockerfile to build PHP7-FPM image. Based on official PHP 7 Alpine image.
 
 ## PHP extentions
 
@@ -15,6 +14,7 @@ Additional PHP extentions in this image:
 - [PDO_PGSQL](http://php.net/manual/en/ref.pdo-pgsql.php)
 - [PDO_SQLITE](http://php.net/manual/en/ref.pdo-sqlite.php)
 - [phpredis](https://github.com/phpredis/phpredis)
+- [zip](http://php.net/manual/en/book.zip.php)
 
 ## Getting image
 
@@ -48,7 +48,7 @@ You can use `-e` docker run command option to change default variables value.
 
 ## Usage
 
-Run with name, mount host directory as a container data volume, set `FPM_PM_MAX_CHILDREN` to 8 and map network ports inside our container to our host. You can put PHP application in this host directory.
+Run with name, mount host directory as a container data volume, set `FPM_PM_MAX_CHILDREN` to 8 and map network ports inside our container to our host. You can put PHP application (like Drupal) in this host directory.
 
 ```
 $ docker run -d -P --name example_name -e "FPM_PM_MAX_CHILDREN=8" -v /example_host_directory:/example_container_volume pvlltvk/php7-fpm

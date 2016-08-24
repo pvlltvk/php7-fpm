@@ -14,13 +14,11 @@ before_install:
             include        fastcgi_params;
         }
     }
-  - cat default.conf
 
 install:
   - docker build -t php7-fpm-test . 
   - docker run -d --name php7-fpm-test -v /var/www  php7-fpm-test
   - docker run -d --name nginx-test -v `echo $PWD`/default.conf:/etc/nginx/conf.d/default.conf --volumes-from php7-fpm-test --link php7-fpm-test -p 8080:80 nginx
-  - docker ps
 
 script:
   - curl -I 127.0.0.1:8080/info.php 2>/dev/null | head -n 1|cut -d$' ' -f2 | grep 200

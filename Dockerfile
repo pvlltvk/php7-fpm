@@ -21,13 +21,14 @@ RUN apk add --no-cache --virtual .php-extentions-deps \
     libjpeg-turbo-dev \
     postgresql-dev \
     libxml2-dev \
-    libmcrypt-dev
+    libmcrypt-dev \
+    git
 
 # Configure and install PHP extentions 
 RUN docker-php-ext-configure gd --with-png-dir=/usr --with-jpeg-dir=/usr \
     && pecl bundle -d /usr/src/php/ext redis \
     && rm /usr/src/php/ext/redis-*.tgz \
-    && docker-php-ext-install gd pdo pdo_mysql pdo_pgsql xmlrpc mcrypt opcache redis
+    && docker-php-ext-install gd pdo pdo_mysql pdo_pgsql xmlrpc mcrypt opcache redis zip
 
 # Delete old config files 
 RUN rm -r /usr/local/etc/php-fpm.conf /usr/local/etc/php-fpm.conf.default /usr/local/etc/php-fpm.d/*
