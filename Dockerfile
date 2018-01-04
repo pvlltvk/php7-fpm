@@ -28,6 +28,8 @@ RUN apk add --no-cache --virtual .php-extentions-deps \
 RUN docker-php-ext-configure gd --with-png-dir=/usr --with-jpeg-dir=/usr \
     && pecl bundle -d /usr/src/php/ext redis \
     && rm /usr/src/php/ext/redis-*.tgz \
+    && pecl bundle -d /usr/src/php/ext mcrypt \
+    && rm /usr/src/php/ext/mcrypt-*.tgz \
     && docker-php-ext-install gd pdo pdo_mysql pdo_pgsql xmlrpc mcrypt opcache redis zip
 
 # Delete old config files 
@@ -50,4 +52,3 @@ RUN echo "<?php phpinfo(); ?>" > /var/www/info.php && \
 WORKDIR /var/www
 EXPOSE 9000
 CMD ["/usr/local/sbin/php-fpm"]
-
